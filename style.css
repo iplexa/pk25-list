@@ -136,78 +136,132 @@ li {
     animation: fadeIn 0.3s;
   }
   
-  .modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 80vh;
-    animation: zoomIn 0.3s;
-  }
-  
-  #caption {
-    margin: 15px auto;
-    text-align: center;
-    color: #ccc;
-    width: 80%;
-    max-width: 700px;
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #bbb;
-    transform: rotate(90deg);
-  }
-  
-  /* Анимации */
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  @keyframes zoomIn {
-    from {transform: scale(0.5);}
-    to {transform: scale(1);}
-  }
-  
-  /* Улучшенная анимация кнопок */
-  .beautiful-button {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  
-  .beautiful-button:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.1);
-    transform: translateX(-100%) skewX(-15deg);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  
-  .beautiful-button:hover:after {
-    transform: translateX(100%) skewX(-15deg);
-  }
-  
-  .beautiful-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .beautiful-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
+.modal-content {
+margin: auto;
+display: block;
+max-width: 90%;
+max-height: 80vh;
+animation: zoomIn 0.3s;
+}
+
+#caption {
+margin: 15px auto;
+text-align: center;
+color: #ccc;
+width: 80%;
+max-width: 700px;
+}
+
+.close {
+position: absolute;
+top: 15px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+transition: 0.3s;
+cursor: pointer;
+}
+
+.close:hover {
+color: #bbb;
+transform: rotate(90deg);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+from {transform: scale(0.5);}
+to {transform: scale(1);}
+}
+
+/* Улучшенная анимация кнопок */
+.beautiful-button {
+position: relative;
+overflow: hidden;
+transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.beautiful-button:after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(255,255,255,0.1);
+transform: translateX(-100%) skewX(-15deg);
+transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.beautiful-button:hover:after {
+transform: translateX(100%) skewX(-15deg);
+}
+
+.beautiful-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.beautiful-button:active {
+transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для предупреждения */
+.warning-notice {
+background: #fff8e6;
+border-left: 5px solid #ffc107;
+padding: 15px;
+margin: 25px 0;
+border-radius: 0 4px 4px 0;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+animation: slideIn 0.5s ease-out;
+}
+
+.warning-content {
+display: flex;
+align-items: center;
+}
+
+.warning-content i {
+color: #ffc107;
+font-size: 24px;
+margin-right: 15px;
+flex-shrink: 0;
+}
+
+.warning-text {
+color: #5a4a00;
+line-height: 1.5;
+}
+
+.warning-text strong {
+color: #5a4a00;
+}
+
+@keyframes slideIn {
+from {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+/* Анимация пульсации для привлечения внимания */
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+.warning-notice {
+animation: slideIn 0.5s ease-out, pulse 2s 1.5s;
+}

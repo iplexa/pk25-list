@@ -73,3 +73,15 @@ document.addEventListener('keydown', function(e) {
     modal.style.display = "none";
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const warning = document.querySelector('.warning-notice');
+    
+    
+    warning.addEventListener('click', function() {
+      this.style.animation = 'none';
+      void this.offsetWidth; 
+      this.style.animation = 'slideIn 0.5s ease-out, pulse 2s';
+    });
+  });
