@@ -265,3 +265,367 @@ to {
 .warning-notice {
 animation: slideIn 0.5s ease-out, pulse 2s 1.5s;
 }
+
+/* Стили для секретного модального окна */
+.secret-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.3s;
+}
+
+.secret-modal-content h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+#secretInput {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#secretInput:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+#secretSubmit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Стили для полноэкранного контейнера */
+.fullscreen-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #000;
+    animation: rgbBackground 2s infinite;
+}
+
+.fullscreen-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.fullscreen-close:hover {
+    color: #ff6b6b;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* RGB анимация фона */
+@keyframes rgbBackground {
+    0% { background: linear-gradient(45deg, #ff0000, #ff4000); }
+    16.66% { background: linear-gradient(45deg, #ff4000, #ff8000); }
+    33.33% { background: linear-gradient(45deg, #ff8000, #ffff00); }
+    50% { background: linear-gradient(45deg, #ffff00, #80ff00); }
+    66.66% { background: linear-gradient(45deg, #80ff00, #00ff00); }
+    83.33% { background: linear-gradient(45deg, #00ff00, #00ff80); }
+    100% { background: linear-gradient(45deg, #00ff80, #ff0000); }
+}
+
+/* Делаем заголовок кликабельным */
+.article-header h1 {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.article-header h1:hover {
+    color: #3498db;
+}
+
+/* Стили для пасхалок */
+
+/* 1. Matrix эффект */
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    white-space: nowrap;
+    animation: matrix-fall linear infinite;
+}
+
+@keyframes matrix-fall {
+    to {
+        transform: translateY(calc(100vh + 100px));
+    }
+}
+
+/* 2. Мем режим */
+.meme-mode .article-image {
+    filter: sepia(100%) hue-rotate(90deg) saturate(200%);
+    transform: rotate(5deg);
+    border: 3px solid #ff6b6b;
+}
+
+/* 3. Админ панель */
+.admin-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1a1a1a;
+    color: #00ff00;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #00ff00;
+    font-family: 'Courier New', monospace;
+    z-index: 10000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    min-width: 400px;
+    display: none;
+}
+
+.admin-panel h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+.admin-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #00ff00;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 4. Дискотека режим */
+.disco-mode {
+    animation: disco-flash 0.5s infinite;
+}
+
+@keyframes disco-flash {
+    0% { background: linear-gradient(45deg, #ff0000, #00ff00); }
+    25% { background: linear-gradient(45deg, #00ff00, #0000ff); }
+    50% { background: linear-gradient(45deg, #0000ff, #ffff00); }
+    75% { background: linear-gradient(45deg, #ffff00, #ff00ff); }
+    100% { background: linear-gradient(45deg, #ff00ff, #ff0000); }
+}
+
+.disco-mode * {
+    animation: disco-pulse 0.3s infinite alternate;
+}
+
+@keyframes disco-pulse {
+    from { filter: brightness(1) saturate(1); }
+    to { filter: brightness(1.5) saturate(2); }
+}
+
+/* 5. Радужный текст */
+.rainbow-text {
+    background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-flow 3s linear infinite;
+}
+
+@keyframes rainbow-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Кнопка загрузки для админ панели */
+.loading-bar {
+    width: 100%;
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #00aa00);
+    width: 0%;
+    transition: width 0.1s;
+    border-radius: 10px;
+}
+
+/* Стили для окна справки */
+.help-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 30px;
+    border: none;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.3s;
+}
+
+.help-modal-content h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.help-content {
+    margin-bottom: 25px;
+}
+
+.easter-egg-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.easter-egg-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.easter-egg-icon {
+    font-size: 2.5em;
+    margin-right: 15px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.easter-egg-info h4 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+}
+
+.easter-egg-info p {
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+.easter-egg-info strong {
+    color: #2c3e50;
+}
+
+.help-footer {
+    border-top: 2px solid #ecf0f1;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.help-footer p {
+    margin: 8px 0;
+    color: #7f8c8d;
+    font-size: 0.95em;
+}
+
+.progress-indicator {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(52, 152, 219, 0.3);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .help-modal-content {
+        margin: 2% auto;
+        padding: 20px;
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .easter-egg-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .easter-egg-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .easter-egg-info {
+        text-align: left;
+    }
+}

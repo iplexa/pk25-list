@@ -94,6 +94,135 @@
         <div id="caption"></div>
     </div>
 
+    <!-- Модальное окно для ввода кодового слова -->
+    <div id="secretModal" class="modal">
+        <div class="secret-modal-content">
+            <span class="close" id="secretClose">&times;</span>
+            <h3>Введите кодовое слово</h3>
+            <input type="text" id="secretInput" placeholder="Кодовое слово">
+            <button id="secretSubmit" class="beautiful-button">Подтвердить</button>
+        </div>
+    </div>
+
+    <!-- Полноэкранное изображение с RGB анимацией -->
+    <div id="fullscreenContainer" class="fullscreen-container">
+        <img id="fullscreenImage" src="mirea.png" alt="МИРЭА">
+        <div class="fullscreen-close" id="fullscreenClose">&times;</div>
+    </div>
+
+    <!-- Админ панель -->
+    <div id="adminPanel" class="admin-panel">
+        <button class="admin-close" id="adminClose">&times;</button>
+        <h3>🔐 ADMIN PANEL v2.0</h3>
+        <div class="admin-stats">
+            <div class="stat-item">
+                <span>Посетители сегодня:</span>
+                <span id="visitors">1337</span>
+            </div>
+            <div class="stat-item">
+                <span>Активных сессий:</span>
+                <span id="sessions">42</span>
+            </div>
+            <div class="stat-item">
+                <span>Пасхалок найдено:</span>
+                <span id="easterEggs">1/5</span>
+            </div>
+            <div class="stat-item">
+                <span>Статус сервера:</span>
+                <span style="color: #00ff00;">●ОЛ</span>
+            </div>
+            <div class="stat-item">
+                <span>Загрузка ЦП:</span>
+                <span id="cpu">67%</span>
+            </div>
+            <div class="stat-item">
+                <span>RAM:</span>
+                <span id="ram">4.2/8 ГБ</span>
+            </div>
+        </div>
+        <div class="loading-bar">
+            <div class="loading-progress" id="loadingProgress"></div>
+        </div>
+        <p style="text-align: center; margin: 10px 0; font-size: 12px;">
+            Система активирована. Доступ предоставлен.
+        </p>
+    </div>
+
+    <!-- Matrix rain container -->
+    <div id="matrixRain" class="matrix-rain" style="display: none;"></div>
+
+    <!-- Окно справки по пасхалкам -->
+    <div id="helpModal" class="modal">
+        <div class="help-modal-content">
+            <span class="close" id="helpClose">&times;</span>
+            <h3>🎮 Справка по пасхалкам</h3>
+            <div class="help-content">
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">🎮</div>
+                    <div class="easter-egg-info">
+                        <h4>Konami Code</h4>
+                        <p><strong>Как активировать:</strong> ↑↑↓↓←→←→BA</p>
+                        <p><strong>Эффект:</strong> Режим "Матрица" с падающими символами</p>
+                    </div>
+                </div>
+                
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">🖱️</div>
+                    <div class="easter-egg-info">
+                        <h4>Секретная кнопка</h4>
+                        <p><strong>Как активировать:</strong> Удерживайте кнопку "Конкурсные списки" 3 секунды</p>
+                        <p><strong>Эффект:</strong> Мем-режим для всех изображений</p>
+                    </div>
+                </div>
+                
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">💻</div>
+                    <div class="easter-egg-info">
+                        <h4>Админ-панель</h4>
+                        <p><strong>Как активировать:</strong> Наберите "admin" на странице</p>
+                        <p><strong>Эффект:</strong> Секретная панель администратора</p>
+                    </div>
+                </div>
+                
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">🕺</div>
+                    <div class="easter-egg-info">
+                        <h4>Дискотека</h4>
+                        <p><strong>Как активировать:</strong> Кликните по предупреждению 10 раз</p>
+                        <p><strong>Эффект:</strong> Режим дискотеки с пульсирующими цветами</p>
+                    </div>
+                </div>
+                
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">🌈</div>
+                    <div class="easter-egg-info">
+                        <h4>Радужный текст</h4>
+                        <p><strong>Как активировать:</strong> Ctrl+Shift+R</p>
+                        <p><strong>Эффект:</strong> Весь текст становится радужным</p>
+                    </div>
+                </div>
+                
+                <div class="easter-egg-item">
+                    <div class="easter-egg-icon">🔮</div>
+                    <div class="easter-egg-info">
+                        <h4>Секретное изображение</h4>
+                        <p><strong>Как активировать:</strong> 5 кликов по заголовку → "МИРЭА"</p>
+                        <p><strong>Эффект:</strong> Полноэкранное изображение с RGB анимацией</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="help-footer">
+                <p><strong>💡 Подсказка:</strong> Все эффекты автоматически отключаются через некоторое время</p>
+                <p><strong>⌨️ ESC</strong> - быстро отключить любой активный эффект</p>
+                <div class="progress-indicator">
+                    <span>Найдено пасхалок: </span>
+                    <span id="helpEasterEggCount">0/6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
